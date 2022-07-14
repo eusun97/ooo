@@ -9,7 +9,7 @@ import plotly.graph_objs as go
 yf.pdr_override()
 
 # 주식코드 입력받기
-stock=input("Enter a stock ticker symbol: ")
+stock="msft"
 
 # 1m 간격으로 yfinance API에서 재고 데이터 프레임(df) 검색
 df = yf.download(tickers=stock,period='1d',interval='1m')

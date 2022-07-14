@@ -5,6 +5,7 @@ import requests
 import pandas as pd
 
 
+
 url= 'https://finance.naver.com/item/sise_day.nhn?code=068270&page=1'
 
 html = BeautifulSoup(requests.get(url,headers={'User-agent':'Mozilla/5.0'}).text,"lxml")
@@ -16,6 +17,7 @@ s=str(pgrr.a['href']).split('=')
 # s는 ['/item/sise_day.nhn?code', '068270&page','351'] 의 3개 문자열을 리스트로 얻었다. =로 분리함
 last_page = s[-1]
 print(last_page)
+
 
 
 
