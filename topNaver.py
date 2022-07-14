@@ -1,4 +1,5 @@
-#1페이지만 크롤링
+#1페이지만 크롤링 
+################## TOP5
 from email import header
 import urllib.request
 from wsgiref import headers
@@ -53,8 +54,6 @@ STOCK_PRICE_LIST
 
 """
 
-
-
 def one_page_list(sosok, page):
    
     url = "https://finance.naver.com/sise/sise_market_sum.nhn?sosok=0&page=1" #주소설정
@@ -63,30 +62,33 @@ def one_page_list(sosok, page):
 
     STOCK_NAME_LIST = []
     STOCK_PRICE_LIST = []
-
+    top=0
+    priceTop=0
     for tr in html.findAll('tr'):
         stockName = tr.findAll('a', attrs={'class', 'tltle'})
         if stockName is None or stockName == []:
             pass
         else:
+            top=top+1
+            if(top==6):
+                break
             stockName = stockName[0].contents[-1]
             STOCK_NAME_LIST.append(stockName)
-            # global top
-            # top=top+1
-            # if(top==5):
-            #     break
+            
+            
 
         stockPrice = tr.findAll('td', attrs={'class', 'number'})
         if stockPrice is None or stockPrice == []:
             pass
         else:
+            priceTop=priceTop+1
+            if(priceTop==6):
+                break
             stockPrice = stockPrice[0].contents[-1]
             stockPrice = stockPrice.replace(",","")
             STOCK_PRICE_LIST.append(stockPrice)
-            #global priceTop
-            # priceTop=priceTop+1
-            # if(priceTop==5):
-            #     break
+            
+            
 
     STOCK_LIST = []
     

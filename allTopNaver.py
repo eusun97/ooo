@@ -8,6 +8,12 @@ from bs4 import BeautifulSoup as bs
 from requests import request
 import pandas as pd
 
+global top
+top =0
+
+global priceTop
+priceTop=0
+
 def one_page_list(sosok, page):
    
     url = "https://finance.naver.com/sise/sise_market_sum.nhn?sosok=0&page=1" #주소설정
@@ -24,10 +30,10 @@ def one_page_list(sosok, page):
         else:
             stockName = stockName[0].contents[-1]
             STOCK_NAME_LIST.append(stockName)
-            # global top
-            # top=top+1
-            # if(top==5):
-            #     break
+            global top
+            top=top+1
+            if(top==5):
+                break
 
         stockPrice = tr.findAll('td', attrs={'class', 'number'})
         if stockPrice is None or stockPrice == []:
@@ -36,17 +42,17 @@ def one_page_list(sosok, page):
             stockPrice = stockPrice[0].contents[-1]
             stockPrice = stockPrice.replace(",","")
             STOCK_PRICE_LIST.append(stockPrice)
-            #global priceTop
-            # priceTop=priceTop+1
-            # if(priceTop==5):
-            #     break
+            global priceTop
+            priceTop=priceTop+1
+            if(priceTop==5):
+                break
 
     STOCK_LIST = []
     
     for i in range(len(STOCK_NAME_LIST)):
         stockInfo = [STOCK_NAME_LIST[i], int(STOCK_PRICE_LIST[i])]
         STOCK_LIST.append(stockInfo)
-        # print(stockInfo)
+        print(stockInfo)
     return pd.DataFrame(STOCK_LIST, columns=('종목명','현재가'))
 
 
