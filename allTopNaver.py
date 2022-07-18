@@ -81,4 +81,5 @@ def all_page_list():
     return pd.concat(FINAL_LIST)
 
 #ALL_STOCK_LIST = all_page_list()
+#위 코드 주석 해제시 로딩 굉장히 오래걸림
 
