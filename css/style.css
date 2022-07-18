@@ -4,11 +4,25 @@
 /* body */
 body{
     font-family: 'Galmuri11';
+    background: #000;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* container_wrap */
+#container_wrap{
+    width: 1000px;
+    position: absolute;
+    left: 50%;
+    margin-left: -500px;
+    padding-top: 30px;
 }
 /* header */
 #header{
     background-color: #BCBCBC;
     border: 4px solid #E6E6E6;
+    margin-top: 100px;
 }
 
 /* header_wrap */
@@ -54,7 +68,7 @@ body{
 /* con_wrap */
 .con{
     height: 100vh;
-    background: #008081;
+    background: #008081 url(../images/pngwing.png) no-repeat right 50px bottom 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,3 +105,8 @@ body{
 }
 
 /* footer */
+#footer{
+    width: 100%;
+    background: #000;
+    height: 100px;
+}
