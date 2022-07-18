@@ -1,0 +1,111 @@
+/* font */
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
+/* body */
+body{
+    font-family: 'Galmuri11';
+    background: #000;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* container_wrap */
+#container_wrap{
+    width: 1000px;
+    position: absolute;
+    left: 50%;
+    margin-left: -500px;
+}
+/* header */
+#header{
+    background-color: #BCBCBC;
+    border: 4px solid #E6E6E6;
+    margin-top: 50px;
+}
+/* header_wrap */
+#header_wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+/* logo */
+#logo{
+    width: 30px;
+    height: 30px;
+    object-fit: cover
+}
+
+/* search_box */
+#search_box{
+    position: relative;
+}
+
+#search_box input{
+    width: 500px;
+    height: 40px;
+    margin: 0 10px;
+    border: 4px solid #E6E6E6;
+    font-family: 'Galmuri11';
+    text-align: center;
+}
+
+#search_btn{
+    border: none;
+    position: absolute;
+    right: 22px;
+    top: 13px;
+    background: url(../images/search.png) no-repeat;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+/* con_wrap */
+.con{
+    background: #008081 url(../images/pngwing.png) no-repeat right 50px bottom 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding-top: 30px;
+}
+
+#container a{
+    color: #fff;
+    text-decoration: none;
+}
+#container li{
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+#container li:hover{
+    background: #BCBCBC;
+    color: #333;
+}
+
+#container p{
+    font-weight: 700;
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+#container span{
+    margin: 10px 0;
+    width: 200px;
+    padding: 15px;
+    display: block;
+    border: 3px solid #fff;
+}
+
+/* footer */
+#footer{
+    margin-bottom: 50px;
+    background-color: #BCBCBC;
+    border: 4px solid #E6E6E6;
+    height: 50px;
+}
