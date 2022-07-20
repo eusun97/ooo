@@ -7,25 +7,27 @@ import pandas as pd
 # 삼성전자(005930) 전체 (1996-11-05 ~ 현재)
 # df = fdr.DataReader('005930')
 # print(df)
+
 def prac():
     global d
     d = date(2022, 1, 11)
-    e = date(2022, 7, 8)
-    #d=d+datetime.timedelta(days=2)
-    print(d.isoformat()+"WWWW")
-    global cal
     
+    #d=d+datetime.timedelta(days=2)
+    
+    global currentStock  
 
     dat =[]
     df = fdr.DataReader('005930', d.isoformat())
-    print(df.index)
-    print(df)
+    #print(df.index)
+    #print(df)
     
     
     dat=df['Close'].tolist()
-    print(dat)
+    currentStock=dat[-1]
+   
+    #print(dat)
     indexList= df.index.strftime("%Y-%m-%d").tolist()
-    print(indexList)
+    #print(indexList)
     # cal=[]
   
     # for num in range(len(dat)):   # 종가 갯수만큼 반복
@@ -36,12 +38,11 @@ def prac():
     #         print(d.weekday())
 
     #         cal.append(d)           # 문제가, for문은 정해진 갯수만큼 계속 반복을 함, 근데 cal[]에는 평일만 넣으니까
-        
-            
+                 
     #     d=d+datetime.timedelta(days=1)
     STOCK_LIST=[]
-    print(len(df.index))
-    print(len(dat))
+   # print(len(df.index))
+   # print(len(dat))
     for i in range(len(dat)):
         
         stockInfo = [str(indexList[i]),dat[i]]
@@ -51,14 +52,5 @@ def prac():
         js = df.to_json(orient='columns').encode().decode('unicode-escape')
 
     return js
-    
-
-    
- 
-    
-
-    
-  
-
 
 prac()

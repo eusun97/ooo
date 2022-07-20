@@ -16,7 +16,7 @@
         <header id="header">
             <div id="header_wrap">
                 <div id="logo">
-                    <a href="./index.html"><img src="./images/logo.png" alt="트리플이응 로고"></a>
+                    <a href="./index.html"><img src="../static/images/logo.png" alt="트리플이응 로고"></a>
                 </div>
                 <!-- //logo -->
                 <div id="search_box">
@@ -43,9 +43,9 @@
             <!-- //virtual_text -->
             <div id="trading_box">
                 <ul id="price_wrap">
-                    <li id="price1" class="price">12000</li>
-                    <li id="price2" class="price">12654</li>
-                    <li id="price3" class="price">12450</li>
+                    
+                    <li id="price2" class="price">{{q|safe}}</li>
+                    
                 </ul>
                 <span id="trading_text">몇주</span>
                 <div id="trading_btn">

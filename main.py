@@ -18,16 +18,26 @@
 #     return {"주식 Top 5":one_page_list(1,1)}
 
 
+from ast import Import
+from datetime import date
+import enum
 from fastapi.staticfiles import StaticFiles
-from typing import Union, ValuesView
+from typing import Optional, Union, ValuesView
 from  fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
 from fastapi import FastAPI, Request
+from h11 import Data
 from pyparsing import html_comment
 from topNaver import one_page_list
 # from fdr_test import prac
 from fdr_testCopy import prac
+from enum import Enum
+import sys
+sys.path.append("/fdr_testCopy")
+import fdr_testCopy as ii
+print(ii.currentStock)
+
 
 
 app = FastAPI()
@@ -49,17 +59,30 @@ async def root(request: Request):
     )
 
 @app.get("/prac")
-async def root(request: Request):
-    print(prac()+"dddddd")
+async def root(request: Request,q:Optional[str]=ii.currentStock):
+    
+    
     return templates.TemplateResponse(
-        "tradingCopy.html", {"request": request, "ooo": prac()}
+        "tradingCopy.html", {"request": request,"q":q, "ooo": prac()}
     )
 
-# @app.get("/user")
-# async def dat(request: Request):
-#     return templates.TemplateResponse(
-#         "index.html"
-#     )
+
+
+# class ModelName(str,Enum):
+    
+#     alexnet=prac()
+
+# @app.get("/user/{model_name}")
+# async def datas(model_name: ModelName):
+   
+#     if model_name == ModelName.alexnet:
+#         return {"model_name":model_name, "message": "Deep Deep"}
+
+#     # if model_name.value == "lenet":
+#     #     return {"model_name": model_name, "message": "LeCNN all the images"}
+
+#     return {"model_name": model_name, "message": "Have some residuals"}
+    
 
 # @app.get("/data")
 # async def data(request: Request):
