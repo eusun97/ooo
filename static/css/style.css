@@ -2,11 +2,10 @@
 @import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
 
 /* body */
-body{
-    font-family: 'Galmuri11';
+.wrap{
     background: #000;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: relative;
 }
 
@@ -35,7 +34,6 @@ body{
 #logo{
     width: 30px;
     height: 30px;
-    object-fit: cover
 }
 
 /* search_box */
@@ -65,7 +63,7 @@ body{
 
 /* con_wrap */
 .con{
-    background: #008081 url(../images/pngwing.png) no-repeat right 50px bottom 50px;
+    background: #008081 url(../images/pngwing.png) no-repeat right 20px bottom 50px;
     display: flex;
     align-items: center;
     justify-content: center;

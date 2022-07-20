@@ -6,36 +6,39 @@
 
 /* name */
 #name{
+    font-family: 'Galmuri11';
     width: 500px;
     background: #BCBCBC;
     color: #333;
     border: 3px solid #fff;
     font-size: 20px;
     line-height: 2;
+    margin-bottom: 40px;
 }
 
 /* chart */
-#chart{
-    width: 500px;
-    height: 500px;
+/* #myChart{
     border: 3px solid #fff;
     margin: 50px 0;
-}
+    width: 800px;
+    height: 600px;
+} */
 
 /* virtual_text */
 #virtual_text{
-    margin-bottom: 30px;
+    margin: 30px 0;
     line-height: 2;
+    font-family: 'Galmuri11';
 }
 
 /* trading_box */
 #trading_box{
     border: 3px solid #fff;
-    width: 500px;
+    width: 400px;
     padding: 20px 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 /* .price */
@@ -49,13 +52,23 @@
 
 /* trading_text */
 #trading_text{
+    width: 50px;
     text-align: center;
-    padding: 0 10px;
+    background: transparent;
+    border: 3px solid white;
+    border-radius: 5px;
+    line-height: 2;
+    font-size: 18px;
+}
+
+#trading_box > form > input::placeholder {
+    color: white;
+    font-family: 'Galmuri11';
 }
 
 /* trading_btn */
 #trading_btn{
-    width: 102px;
+    width: 60px;
 }
 
 #trading_box button{
