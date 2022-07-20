@@ -36,6 +36,7 @@ app.mount(
     name="static",
 )
 
+
 templates = Jinja2Templates(directory="templates")
 
 @app.get("/")
