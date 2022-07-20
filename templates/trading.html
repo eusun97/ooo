@@ -12,78 +12,115 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
 </head>
 <body>
-    <div id="container_wrap">
-        <header id="header">
-            <div id="header_wrap">
-                <div id="logo">
-                    <a href="./index.html"><img src="./images/logo.png" alt="트리플이응 로고"></a>
+    <div class="wrap">
+        <div id="container_wrap">
+            <header id="header">
+                <div id="header_wrap">
+                    <div id="logo">
+                        <a href="./index.html"><img src="../static/images/logo.png" alt="트리플이응 로고"></a>
+                    </div>
+                    <!-- //logo -->
+                    <div id="search_box">
+                        <form>
+                            <input id="input_search" type="search" placeholder="종목을 입력하세요.">
+                        </form>
+                        <button id="search_btn"></button>
+                    </div>
+                    <!-- //search_box -->
                 </div>
-                <!-- //logo -->
-                <div id="search_box">
+                <!-- //header_wrap -->
+            </header>
+            <!-- //header -->
+            <div class="icon">
+                <span>Setting</span>
+                <span>Internet explorer</span>
+                <span>Recycle bin</span>
+                <span>Folder</span>
+            </div>
+            <div id="con_wrap" class="con">
+                <h1 id="name">삼성전자</h1>
+                <!-- //name -->
+                <div class="col-md-6">
+                    <canvas id="myChart" width="700" height="300" style="background-color: #fff;"></canvas>
+                </div>
+    
+                <!-- <canvas id="line-chart" width="700" height="400"></canvas> -->
+                <!-- //chart -->
+                <p id="virtual_text">※ 이 페이지는 주식 가상 체험 사이트 입니다. ※ <br>
+                    실제 거래를 할 수 없습니다.
+                </p>
+                <!-- //virtual_text -->
+                <div id="trading_box">
+                    <ul id="price_wrap">
+                        <li id="price1" class="price">12000</li>
+                        <!-- <li id="price2" class="price">12654</li>
+                        <li id="price3" class="price">12450</li> -->
+                    </ul>
                     <form>
-                        <input id="input_search" type="search" placeholder="종목을 입력하세요.">
+                        <input id="trading_text" type="text" placeholder="몇주">
                     </form>
-                    <button id="search_btn"></button>
+                    <!-- <span id="trading_text">몇주</span> -->
+                    <div id="trading_btn">
+                        <button id="buy">매수</button>
+                        <button id="sell">매도</button>
+                    </div>
                 </div>
-                <!-- //search_box -->
+                 <!--//trading_box  -->
             </div>
-            <!-- //header_wrap -->
-        </header>
-        <!-- //header -->
-        <div id="con_wrap" class="con">
-            <h1 id="name">삼성전자</h1>
-            <!-- //name -->
-            <canvas id="line-chart"></canvas>
-            <!-- //chart -->
-            <div id="data"></div>
-            <!-- //data -->
-            <p id="virtual_text">※ 이 페이지는 주식 가상 체험 사이트 입니다. ※ <br>
-                실제 거래를 할 수 없습니다.
-            </p>
-            <!-- //virtual_text -->
-            <div id="trading_box">
-                <ul id="price_wrap">
-                    <li id="price1" class="price">12000</li>
-                    <li id="price2" class="price">12654</li>
-                    <li id="price3" class="price">12450</li>
+            <!-- //.con -->
+            <footer id="footer">
+                <ul id="ft_wrap">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
                 </ul>
-                <span id="trading_text">몇주</span>
-                <div id="trading_btn">
-                    <button id="buy">매수</button>
-                    <button id="sell">매도</button>
-                </div>
-            </div>
-             <!--//trading_box  -->
+            </footer>
+            <!-- //footer -->
         </div>
-        <!-- //.con -->
-        <footer id="footer"></footer>
+        <!-- //container_wrap -->
     </div>
-   <!-- <script src="/static/js/chacha.js" ></script> -->
-   <script>
-    // var data = JSON.parse({{data}})
-    var data = {{ ooo | safe }}
-
-    var label = [] 
-    for (let key of Object.keys(data["기간"])) label.push(data["기간"][key])
-    var price = []
-    for (let key of Object.keys(data["종가"])) price.push(data["종가"][key])
-
-    console.log(data)
-    var myChart = $('#line-chart');
-    var myLineChart = new Chart(myChart,{
-    type:'line',
-    data:{
-        labels: label,
-        datasets:[
-            {
-                label:'2022',
-                data: price,
-                backgroundColor: 'lightgray',
-                borderColor: 'white',
+    <!-- //wrap -->
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
             },
-        ]
-    }
-    })
-</script>
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        color: 'white'
+                    }
+                }
+            }
+        });
+
+    </script>
+    <!-- <script src="/static/js/chacha.js" ></script> -->
 </body>
 </html>
