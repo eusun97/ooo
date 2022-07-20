@@ -1,14 +1,35 @@
-from datetime import date
+from datetime import date, datetime
+from operator import index
 import FinanceDataReader as fdr
+import datetime
+import pandas as pd
 
-# 삼성전자(005930) 전체 (1996-11-05 ~ 현재)
-# df = fdr.DataReader('005930')
-# print(df)
+# 삼성전자(005930)
+def prac():
+    global d
+    d = date(2022, 1, 11)
+    e = date(2022, 7, 8)
+    print(d.isoformat()+"www")
+    global cal
 
-d = date(2022, 7, 1)
-print(d.isoformat())
-
-df = fdr.DataReader('005930', d.isoformat(), '2022-07-12')
-print(df)
-
-print(df['Close'].tolist())
+    dat =[]
+    df = fdr.DataReader('005930', d.isoformat())
+    
+    dat=df['Close'].tolist()
+    #print(dat)
+    indexList= df.index.strftime("%Y-%m-%d").tolist()
+  
+    STOCK_LIST=[]
+    
+    print(len(df.index))
+    print(len(dat))
+    
+    for i in range(len(dat)):       
+        stockInfo = [str(indexList[i]),dat[i]]
+        STOCK_LIST.append(stockInfo)
+        print(stockInfo)
+        df = pd.DataFrame(STOCK_LIST, columns=('기간','종가'))
+        js = df.to_json(orient='columns').encode().decode('unicode-escape')
+    return js
+    
+prac()
