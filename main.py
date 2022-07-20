@@ -26,6 +26,8 @@ from pathlib import Path
 from fastapi import FastAPI, Request
 from pyparsing import html_comment
 from topNaver import one_page_list
+# from fdr_test import prac
+from fdr_testCopy import prac
 
 
 app = FastAPI()
@@ -41,11 +43,29 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/")
 async def root(request: Request):
+    print(one_page_list(1, 1))
     return templates.TemplateResponse(
-        "trading.html", {"request": request}
+        "trading.html", {"request": request, "wg": one_page_list(1, 1)}
     )
 
+@app.get("/prac")
+async def root(request: Request):
+    print(prac()+"dddddd")
+    return templates.TemplateResponse(
+        "tradingCopy.html", {"request": request, "ooo": prac()}
+    )
 
+# @app.get("/user")
+# async def dat(request: Request):
+#     return templates.TemplateResponse(
+#         "index.html"
+#     )
+
+# @app.get("/data")
+# async def data(request: Request):
+#     from topNaver import one_page_list
+
+#     return one_page_list(1, 1)
 
 
 
