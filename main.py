@@ -43,26 +43,13 @@ sys.path.append("/topNaver")
 import topNaver as tn
 from bs4 import BeautifulSoup as bs4
 
-snl=tn.STOCK_NAME_LIST[0]
-snl2=snl
-print(type(snl))
-str(snl)
-print(type(snl))
-
-print(type(snl2))
 
 listSt=[]
 for names in tn.STOCK_NAME_LIST:
     name=str(names.text)
-    print(name)
-    print(type(name))
+
     
     listSt.append(name)
-
-print(name)
-print(type(listSt))
-print(len(listSt))
-print(listSt[0],listSt[1],listSt[2],listSt[3])
 
 
 app = FastAPI()
