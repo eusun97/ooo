@@ -1,3 +1,4 @@
+#########detail_page
 from datetime import date, datetime
 from operator import index
 import FinanceDataReader as fdr
