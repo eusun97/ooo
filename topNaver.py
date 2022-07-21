@@ -12,7 +12,7 @@ def one_page_list(sosok, page):
     url = "https://finance.naver.com/sise/sise_market_sum.nhn?sosok=0&page=1" #주소설정
 
     html = bs(requests.get(url,headers={'User-agent':'Mozilla/5.0'}).text,"lxml")
-
+    global STOCK_NAME_LIST
     STOCK_NAME_LIST = []
     STOCK_PRICE_LIST = []
     top=0
@@ -46,7 +46,7 @@ def one_page_list(sosok, page):
         STOCK_LIST.append(stockInfo)
         print(stockInfo)
         df = pd.DataFrame(STOCK_LIST, columns=('종목명','현재가'))
-        js = df.to_json(orient='columns').encode().decode('unicode-escape')       
+        js = df.to_json(orient='columns').encode().decode('unicode-escape')   
     return js
 
 one_page_list(1, 1)
