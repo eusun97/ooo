@@ -5,9 +5,14 @@ from fastapi.templating import Jinja2Templates
 from pathlib import Path
 from fastapi import FastAPI, Request
 from pyparsing import html_comment
-from fdr_test import prac
+# from fdr_test import prac
+
+from routers import top5_page, detail_page
 
 app = FastAPI()
+
+app.include_router(top5_page.router)
+app.include_router(detail_page.router)
 
 app.mount(
     "/static",
@@ -15,19 +20,21 @@ app.mount(
     name="static",
 )
 
-templates = Jinja2Templates(directory="templates")
+BASE_DIR = Path(__file__).parent.parent.absolute()
+
+templates = Jinja2Templates(directory=BASE_DIR / "templates")
 
 @app.get("/")
 async def root(request: Request):
-    return "main page"
+    return templates.TemplateResponse("home.html", {"request": request})
 
-@app.get("/index")
-async def root(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+# @app.get("/index")
+# async def root(request: Request):
+#     return templates.TemplateResponse("index.html", {"request": request})
 
-@app.get("/trading")
-async def root(request: Request):
-    print(prac()+"dddddd")
-    return templates.TemplateResponse(
-        "trading.html", {"request": request, "ooo": prac()}
-    )
+# @ap.get("/trading")
+# async def root(request: Request):
+#     print(prac()+"dddddd")
+#     return templates.TemplateResponse(
+#         "trading.html", {"request": request, "ooo": prac()}
+#     )
