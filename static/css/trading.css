@@ -7,7 +7,7 @@
 /* name */
 #name{
     font-family: 'Galmuri11';
-    width: 500px;
+    width: 200px;
     background: #BCBCBC;
     color: #333;
     border: 3px solid #fff;
@@ -15,14 +15,6 @@
     line-height: 2;
     margin-bottom: 40px;
 }
-
-/* chart */
-/* #myChart{
-    border: 3px solid #fff;
-    margin: 50px 0;
-    width: 800px;
-    height: 600px;
-} */
 
 /* virtual_text */
 #virtual_text{
@@ -86,3 +78,77 @@
 #trading_box button:first-child{
     margin-bottom: 20px;
 }
+
+/* modal */
+#modal{
+    font-family: 'Galmuri11';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+/* popup */
+.popup{
+    width: 400px;
+    height: 200px;
+    background: lightgray;
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    top: 50%;
+    margin-top: -100px;
+    border-radius: 10px;
+}
+
+.popup::before{
+    content: "Windows 98";
+    display: block;
+    background: #0100C0;
+    color: #fff;
+    line-height: 2;
+    font-size: 14px;
+    padding-left: 10px;
+    border-radius: 10px 10px 0 0 ;
+
+}
+
+.popup p{
+    text-align: center;
+    line-height: 2;
+    margin-top: 20px;
+    display: inline-block;
+    margin-left: 150px;
+}
+
+#pop_win{
+    background: lightgray url(../images/pop_win.png) no-repeat left 30px top 90px;
+}
+
+#pop_gameover{
+    background: lightgray url(../images/pop_gameover.png) no-repeat left 30px top 90px;
+}
+
+#pop_worning{
+    background: lightgray url(../images/pop_worning.png) no-repeat left 30px top 90px;
+}
+
+.pop_btn{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.btn_yes{
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+
+.btn_no{
+    cursor: pointer;
+}
+
+
