@@ -5,8 +5,6 @@ from fastapi.templating import Jinja2Templates
 from pathlib import Path
 from fastapi import FastAPI, Request
 from pyparsing import html_comment
-# from fdr_test import prac
-
 from routers import top5_page, detail_page
 
 app = FastAPI()
@@ -27,3 +25,4 @@ templates = Jinja2Templates(directory=BASE_DIR / "templates")
 @app.get("/")
 async def root(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
+
