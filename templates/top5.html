@@ -9,6 +9,7 @@
     <title>트리플 이응</title>
 </head>
 <body>
+<<<<<<< HEAD:templates/top5.html
     <div class="wrap">
         <div id="container_wrap">
             <header id="header">
@@ -78,21 +79,77 @@
                     </a>
                 </ul>
                 <!-- //container -->
+=======
+    <div id="container_wrap">
+        <header id="header">
+            <div id="header_wrap">
+                <div id="logo">
+                    <a href="./index.html"><img src="../static/images/logo.png" alt="트리플이응 로고"></a>
+                </div>
+                <!-- //logo -->
+                <div id="search_box">
+                    <form>
+                        <input id="input_search" type="search" placeholder="종목을 입력하세요.">
+                    </form>
+                    <button id="search_btn"></button>
+                </div>
+                <!-- //search_box -->
+>>>>>>> origin/feat/choeun:templates/index.html
             </div>
-            <!-- //con_wrap -->
-            <footer id="footer">
-                <ul id="ft_wrap">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </footer>
-            <!-- //footer -->
+            <!-- //header_wrap -->
+        </header>
+        <!-- //header -->
+        <div id="con_wrap" class="con">
+            <ul id="container">
+
+                <a href="./trading">
+                    <li id="score1">
+                        <p>1위</p>
+                        <span>{{q[0]|safe}}</span>
+                    </li>
+                </a>
+
+                <a href="./trading">
+                    <li id="score2">
+                        <p>2위</p>
+                        <span>{{q[1]|safe}}</span>
+                    </li>
+                </a>
+
+                <a href="./trading">
+                    <li id="score3">
+                        <p>3위</p>
+                        <span>{{q[2]|safe}}</span>
+                    </li>
+                </a>
+                <a href="./trading">
+                    <li id="score4">
+                        <p>4위</p>
+                        <span>{{q[3]|safe}}</span>
+                    </li>
+                </a>
+
+                <a href="./trading">
+                    <li id="score5">
+                        <p>5위</p>
+                        <span>{{q[4]|safe}}</span>
+                    </li>
+                </a>
+            </ul>
+            <!-- //container -->
         </div>
-        <!-- //container_wrap -->
+        <!-- //con_wrap -->
+        <footer id="footer">
+            <ul id="ft_wrap">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </footer>
+        <!-- //footer -->
     </div>
-    <!-- //wrap -->
+    <!-- //container_wrap -->
 </body>
 </html>

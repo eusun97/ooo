@@ -4,83 +4,112 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ url_for('static', path='/css/trading.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', path='/css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/css/trading.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', path='/css/reset.css') }}" rel="stylesheet">
     <title>트리플 이응 - 주식정보</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
 </head>
 <body>
-    <div class="wrap">
-        <div id="container_wrap">
-            <header id="header">
-                <div id="header_wrap">
-                    <div id="logo">
-                        <a href="./index"><img src="../static/images/logo.png" alt="트리플이응 로고"></a>
-                    </div>
-                    <!-- //logo -->
-                    <div id="search_box">
-                        <form>
-                            <input id="input_search" type="search" placeholder="종목을 입력하세요.">
-                        </form>
-                        <button id="search_btn"></button>
-                    </div>
-                    <!-- //search_box -->
+    <div id="container_wrap">
+        <header id="header">
+            <div id="header_wrap">
+                <div id="logo">
+                    <a href="./index"><img src="../static/images/logo.png" alt="트리플이응 로고"></a>
                 </div>
-                <!-- //header_wrap -->
-            </header>
-            <!-- //header -->
-            <div class="icon">
-                <span>Setting</span>
-                <span>Internet explorer</span>
-                <span>Recycle bin</span>
-                <span>Folder</span>
-            </div>
-            <div id="con_wrap" class="con">
-                <h1 id="name">{{payload["name"]}}</h1>
-                <!-- //name -->
-                <div class="col-md-6">
-                    <canvas id="myChart" width="700" height="300" style="background-color: #fff;"></canvas>
-                </div>
-                <!-- //chart -->
-                <p id="virtual_text">※ 이 페이지는 주식 가상 체험 사이트 입니다. ※ <br>
-                    실제 거래를 할 수 없습니다.
-                </p>
-                <!-- //virtual_text -->
-                <div id="trading_box">
-                    <ul id="price_wrap">
-                        <li id="price1" class="price">{{payload["close_price"]}}</li>
-                        <!-- <li id="price2" class="price">12654</li>
-                        <li id="price3" class="price">12450</li> -->
-
-                    </ul>
+                <!-- //logo -->
+                <div id="search_box">
                     <form>
-                        <input id="trading_text" type="text" placeholder="몇주">
+                        <input id="input_search" type="search" placeholder="종목을 입력하세요.">
                     </form>
-                    <!-- <span id="trading_text">몇주</span> -->
-                    <div id="trading_btn">
-                        <button id="buy">매수</button>
-                        <button id="sell">매도</button>
-                    </div>
+                    <button id="search_btn"></button>
                 </div>
-                 <!--//trading_box  -->
+                <!-- //search_box -->
             </div>
-            <!-- //.con -->
-            <footer id="footer">
-                <ul id="ft_wrap">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </footer>
-            <!-- //footer -->
+            <!-- //header_wrap -->
+        </header>
+        <!-- //header -->
+        <div class="icon">
+            <span>Setting</span>
+            <span>Internet explorer</span>
+            <span>Recycle bin</span>
+            <span>Folder</span>
         </div>
-        <!-- //container_wrap -->
+        <!-- //icon -->
+        <div id="con_wrap" class="con">
+            <h1 id="name">{{payload["name"]}}</h1>
+            <!-- //name -->
+            <div class="col-md-6">
+                <canvas id="myChart" width="700" height="300" style="background-color: #fff;"></canvas>
+            </div>
+            <!-- //chart -->
+            <p id="virtual_text">※ 이 페이지는 주식 가상 체험 사이트 입니다. ※ <br>
+                실제 거래를 할 수 없습니다.
+            </p>
+            <!-- //virtual_text -->
+            <div id="trading_box">
+                <ul id="price_wrap">
+                    <li id="price1" class="price">{{payload["close_price"]}}</li>
+                    <!-- <li id="price2" class="price">12654</li>
+                    <li id="price3" class="price">12450</li> -->
+
+                </ul>
+                <form>
+                    <input id="input_search" type="search" placeholder="종목을 입력하세요.">
+                </form>
+                <button id="search_btn"></button>
+            </div>
+            <!-- //trading_box -->
+        </div>
+        <!-- //con_wrap -->
     </div>
-    <!-- //wrap -->
+    <div>
+        <!-- //header -->
+        <div class="icon">
+            <span>Setting</span>
+            <span>Internet explorer</span>
+            <span>Recycle bin</span>
+            <span>Folder</span>
+        </div>
+        <div id="con_wrap" class="con">
+            <h1 id="name">삼성전자</h1>
+            <!-- //name -->
+            <div class="col-md-6">
+                <canvas id="myChart" width="700" height="300" style="background-color: #fff;"></canvas>
+            </div>
+            <!-- //chart -->
+            <p id="virtual_text">※ 이 페이지는 주식 가상 체험 사이트 입니다. ※ <br>
+                실제 거래를 할 수 없습니다.
+            </p>
+            <!-- //virtual_text -->
+            <div id="trading_box">
+                <ul id="price_wrap">
+                    <li id="price1" class="price">{{q|safe}}</li>
+                </ul>
+                <form>
+                    <input id="trading_text" type="text" placeholder="몇주">
+                </form>
+                <!-- <span id="trading_text">몇주</span> -->
+                <div id="trading_btn">
+                    <button id="buy">매수</button>
+                    <button id="sell">매도</button>
+                </div>
+            </div>
+             <!--//trading_box  -->
+        </div>
+        <!-- //.con -->
+        <footer id="footer">
+            <ul id="ft_wrap">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </footer>
+        <!-- //footer -->
+    </div>
+    <!-- //container_wrap -->
     <div id="modal">
         <div id="pop_win" class="popup">
             <p>WIN !<br>
@@ -98,7 +127,7 @@
                 자산을 잃었네요..
             </p>
             <div class="pop_btn">
-                <button class="btn_ok">확인</button>
+                <button id="btn_ok">확인</button>
             </div>
         </div>
         <div id="pop_worning" class="popup">
@@ -112,6 +141,7 @@
         </div>
     </div>
     <!-- //modal -->
+
     <script>
         var data = {{ payload["price_list"] | safe }}
 
@@ -145,7 +175,9 @@
                         'rgba(153, 102, 255, 1)',
                         'rgba(255, 159, 64, 1)'
                     ],
-                    borderWidth: 1
+                    borderWidth: 1,
+                    // pointBackgroundColor: 'red',
+                     pointRadius:2
                 }]
             },
             options: {
@@ -156,8 +188,7 @@
                 }
             }
         });
-
     </script>
-    <!-- <script src="/static/js/chacha.js" ></script> -->
+    <script src="../static/js/popup.js"></script>
 </body>
 </html>
