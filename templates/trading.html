@@ -38,7 +38,7 @@
                 <span>Folder</span>
             </div>
             <div id="con_wrap" class="con">
-                <h1 id="name">삼성전자</h1>
+                <h1 id="name">{{payload["name"]}}</h1>
                 <!-- //name -->
                 <div class="col-md-6">
                     <canvas id="myChart" width="700" height="300" style="background-color: #fff;"></canvas>
@@ -52,7 +52,7 @@
                 <!-- //virtual_text -->
                 <div id="trading_box">
                     <ul id="price_wrap">
-                        <li id="price1" class="price">{{q|safe}}</li>
+                        <li id="price1" class="price">{{payload["close_price"]}}</li>
                         <!-- <li id="price2" class="price">12654</li>
                         <li id="price3" class="price">12450</li> -->
                     </ul>
@@ -83,7 +83,7 @@
     </div>
     <!-- //wrap -->
     <script>
-        var data = {{ ooo | safe }}
+        var data = {{ payload["price_list"] | safe }}
 
         var label = [] 
         for (let key of Object.keys(data["기간"])) label.push(data["기간"][key])
