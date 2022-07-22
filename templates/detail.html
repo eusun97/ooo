@@ -15,7 +15,7 @@
         <header id="header">
             <div id="header_wrap">
                 <div id="logo">
-                    <a href="./index"><img src="../static/images/logo.png" alt="트리플이응 로고"></a>
+                    <a href="./top5"><img src="../static/images/logo.png" alt="트리플이응 로고"></a>
                 </div>
                 <!-- //logo -->
                 <div id="search_box">
@@ -55,49 +55,16 @@
 
                 </ul>
                 <form>
-                    <input id="input_search" type="search" placeholder="종목을 입력하세요.">
-                </form>
-                <button id="search_btn"></button>
-            </div>
-            <!-- //trading_box -->
-        </div>
-        <!-- //con_wrap -->
-    </div>
-    <div>
-        <!-- //header -->
-        <div class="icon">
-            <span>Setting</span>
-            <span>Internet explorer</span>
-            <span>Recycle bin</span>
-            <span>Folder</span>
-        </div>
-        <div id="con_wrap" class="con">
-            <h1 id="name">삼성전자</h1>
-            <!-- //name -->
-            <div class="col-md-6">
-                <canvas id="myChart" width="700" height="300" style="background-color: #fff;"></canvas>
-            </div>
-            <!-- //chart -->
-            <p id="virtual_text">※ 이 페이지는 주식 가상 체험 사이트 입니다. ※ <br>
-                실제 거래를 할 수 없습니다.
-            </p>
-            <!-- //virtual_text -->
-            <div id="trading_box">
-                <ul id="price_wrap">
-                    <li id="price1" class="price">{{q|safe}}</li>
-                </ul>
-                <form>
                     <input id="trading_text" type="text" placeholder="몇주">
                 </form>
-                <!-- <span id="trading_text">몇주</span> -->
                 <div id="trading_btn">
                     <button id="buy">매수</button>
                     <button id="sell">매도</button>
                 </div>
             </div>
-             <!--//trading_box  -->
+            <!-- //trading_box -->
         </div>
-        <!-- //.con -->
+        <!-- //con_wrap -->
         <footer id="footer">
             <ul id="ft_wrap">
                 <li></li>
@@ -109,6 +76,7 @@
         </footer>
         <!-- //footer -->
     </div>
+        <!-- //.con -->
     <!-- //container_wrap -->
     <div id="modal">
         <div id="pop_win" class="popup">
