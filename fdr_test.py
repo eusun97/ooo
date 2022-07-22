@@ -9,9 +9,6 @@ import pandas as pd
 def prac():
     global d
     d = date(2022, 1, 11)
-    
-
-
     dat =[]
     df = fdr.DataReader('005930', d.isoformat())
 
@@ -19,18 +16,15 @@ def prac():
     
     dat=df['Close'].tolist()
 
-   
-    #print(dat)
+
     indexList= df.index.strftime("%Y-%m-%d").tolist()
 
    
     STOCK_LIST=[]
-
-    for i in range(len(dat)):
-        
+    
+    for i in range(len(dat)):       
         stockInfo = [str(indexList[i]),dat[i]]
         STOCK_LIST.append(stockInfo)
-        print(stockInfo)
         df = pd.DataFrame(STOCK_LIST, columns=('기간','종가'))
         js = df.to_json(orient='columns').encode().decode('unicode-escape')
 

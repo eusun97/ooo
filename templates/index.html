@@ -14,7 +14,7 @@
             <header id="header">
                 <div id="header_wrap">
                     <div id="logo">
-                        <a href="./index.html"><img src="../static/images/logo.png" alt="트리플이응 로고"></a>
+                        <a href="./index"><img src="../static/images/logo.png" alt="트리플이응 로고"></a>
                     </div>
                     <!-- //logo -->
                     <div id="search_box">
@@ -37,48 +37,43 @@
             <div id="con_wrap" class="con">
                 <ul id="container">
 
-                    <a href="./trading">
+                    <a href="./trading?code={{payload['code'][0]}}">
                         <li id="score1">
-                            <p>1등</p>
-                            <span>{{q[0]|safe}}</span>
-
+                            <p>1위</p>
+                            <span>{{payload["name"][0]}}</span>
                         </li>
                     </a>
 
-                    <a href="./trading">
+                    <a href="./trading?code={{payload['code'][1]}}">
 
                         <li id="score2">
 
-                            <p>2등</p>
-                            <span>{{q[1]|safe}}</span>
-
+                            <p>2위</p>
+                            <span>{{payload["name"][1]}}</span>
                         </li>
                     </a>
 
-                    <a href="./trading">
+                    <a href="./trading?code={{payload['code'][2]}}">
                         <li id="score3">
 
-                            <p>3등</p>
-                            <span>{{q[2]|safe}}</span>
-
+                            <p>3위</p>
+                            <span>{{payload["name"][2]}}</span>
                         </li>
                     </a>
-                    <a href="./trading">
+                    <a href="./trading?code={{payload['code'][3]}}">
                         <li id="score4">
 
-                            <p>4등</p>
-                            <span>{{q[3]|safe}}</span>
-
+                            <p>4위</p>
+                            <span>{{payload["name"][3]}}</span>
                         </li>
                     </a>
 
-                    <a href="./trading">
+                    <a href="./trading?code={{payload['code'][4]}}">
 
                         <li id="score5">
 
-                            <p>5등</p>
-                            <span>{{q[4]|safe}}</span>
-
+                            <p>5위</p>
+                            <span>{{payload["name"][4]}}</span>
                         </li>
                     </a>
                 </ul>
