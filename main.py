@@ -18,7 +18,7 @@ app.mount(
 
 templates = Jinja2Templates(directory="templates")
 
-BASE_DIR = Path(__file__).parent.parent.absolute()
+BASE_DIR = Path(__file__).parent.absolute()
 
 templates = Jinja2Templates(directory=BASE_DIR / "templates")
 
