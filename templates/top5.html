@@ -24,75 +24,73 @@
                         <button id="search_btn"></button>
                     </div>
                     <!-- //search_box -->
-                </div>
-                <!-- //header_wrap -->
-            </header>
-            <!-- //header -->
-             <div class="icon">
-                <span>Setting</span>
-                <span>Internet explorer</span>
-                <span>Recycle bin</span>
-                <span>Folder</span>
             </div>
-            <div id="con_wrap" class="con">
-                <ul id="container">
-
-                    <a href="./detail?code={{payload['code'][0]}}">
-                        <li id="score1">
-                            <p>1위</p>
-                            <span>{{payload["name"][0]}}</span>
-                        </li>
-                    </a>
-
-                    <a href="./detail?code={{payload['code'][1]}}">
-
-                        <li id="score2">
-
-                            <p>2위</p>
-                            <span>{{payload["name"][1]}}</span>
-                        </li>
-                    </a>
-
-                    <a href="./detail?code={{payload['code'][2]}}">
-                        <li id="score3">
-
-                            <p>3위</p>
-                            <span>{{payload["name"][2]}}</span>
-                        </li>
-                    </a>
-                    <a href="./detail?code={{payload['code'][3]}}">
-                        <li id="score4">
-
-                            <p>4위</p>
-                            <span>{{payload["name"][3]}}</span>
-                        </li>
-                    </a>
-
-                    <a href="./detail?code={{payload['code'][4]}}">
-
-                        <li id="score5">
-
-                            <p>5위</p>
-                            <span>{{payload["name"][4]}}</span>
-                        </li>
-                    </a>
-                </ul>
-                <!-- //container -->
-            </div>
-            <!-- //con_wrap -->
-            <footer id="footer">
-                <ul id="ft_wrap">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </footer>
-            <!-- //footer -->
+            <!-- //header_wrap -->
+        </header>
+        <!-- //header -->
+            <div class="icon">
+            <span>Setting</span>
+            <span>Internet explorer</span>
+            <span>Recycle bin</span>
+            <span>Folder</span>
         </div>
-        <!-- //container_wrap -->
+        <div id="con_wrap" class="con">
+            <ul id="container">
+
+                <a href="./detail?code={{payload['code'][0]}}">
+                    <li id="score1">
+                        <p>1위</p>
+                        <span>{{payload["name"][0]}}</span>
+                    </li>
+                </a>
+
+                <a href="./detail?code={{payload['code'][1]}}">
+
+                    <li id="score2">
+
+                        <p>2위</p>
+                        <span>{{payload["name"][1]}}</span>
+                    </li>
+                </a>
+
+                <a href="./detail?code={{payload['code'][2]}}">
+                    <li id="score3">
+
+                        <p>3위</p>
+                        <span>{{payload["name"][2]}}</span>
+                    </li>
+                </a>
+                <a href="./detail?code={{payload['code'][3]}}">
+                    <li id="score4">
+
+                        <p>4위</p>
+                        <span>{{payload["name"][3]}}</span>
+                    </li>
+                </a>
+
+                <a href="./detail?code={{payload['code'][4]}}">
+
+                    <li id="score5">
+
+                        <p>5위</p>
+                        <span>{{payload["name"][4]}}</span>
+                    </li>
+                </a>
+            </ul>
+        <!-- //container -->
+        </div>
+        <!-- //con_wrap -->
+        <footer id="footer">
+            <ul id="ft_wrap">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </footer>
+        <!-- //footer -->
     </div>
-    <!-- //wrap -->
+    <!-- //container_wrap -->
 </body>
 </html>

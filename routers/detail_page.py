@@ -30,10 +30,10 @@ from pathlib import Path
 from fastapi import FastAPI, Request
 from fdr_test import prac
 from topNaver import one_page_list
-from fdr_testCopy import prac
+from fdr_test import prac
 import sys
 sys.path.append("/fdr_testCopy")
-import fdr_testCopy as ii
+import fdr_test as ii
 sys.path.append("/topNaver")
 import topNaver as tn
 import json

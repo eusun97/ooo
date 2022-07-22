@@ -95,13 +95,13 @@
 .popup{
     width: 400px;
     height: 200px;
-    background: lightgray;
     position: absolute;
     left: 50%;
     margin-left: -200px;
     top: 50%;
     margin-top: -100px;
     border-radius: 10px;
+    display: none;
 }
 
 .popup::before{
@@ -113,7 +113,10 @@
     font-size: 14px;
     padding-left: 10px;
     border-radius: 10px 10px 0 0 ;
+}
 
+#modal.activated, .popup.activated {
+    display: block;
 }
 
 .popup p{
@@ -136,6 +139,14 @@
     background: lightgray url(../images/pop_worning.png) no-repeat left 30px top 90px;
 }
 
+#pop_win .pop_btn{
+    margin-left: 70px;
+}
+
+#pop_worning .pop_btn{
+    margin-left: 100px;
+}
+
 .pop_btn{
     text-align: center;
     margin-top: 15px;
@@ -151,5 +162,6 @@
     cursor: pointer;
 }
 
-
-
+#btn_ok{
+    margin-left: 80px;
+}
