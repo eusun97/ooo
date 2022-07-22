@@ -50,7 +50,11 @@
                 <!-- //virtual_text -->
                 <div id="trading_box">
                     <ul id="price_wrap">
-                        <li id="price1" class="price">12000</li>
+
+                        <li id="price1" class="price">{{q|safe}}</li>
+                        <!-- <li id="price2" class="price">12654</li>
+                        <li id="price3" class="price">12450</li> -->
+
                     </ul>
                     <form>
                         <input id="trading_text" type="text" placeholder="몇주">
@@ -110,14 +114,22 @@
     </div>
     <!-- //modal -->
     <script>
+        var data = {{ ooo | safe }}
+
+        var label = [] 
+        for (let key of Object.keys(data["기간"])) label.push(data["기간"][key])
+
+        var price = []
+        for (let key of Object.keys(data["종가"])) price.push(data["종가"][key])
+
         const ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: label,
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: '종가',
+                    data: price,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -140,8 +152,7 @@
             options: {
                 scales: {
                     y: {
-                        beginAtZero: true,
-                        color: 'white'
+                        beginAtZero: false,
                     }
                 }
             }

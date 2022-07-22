@@ -1,0 +1,144 @@
+/* font */
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
+/* body */
+.wrap{
+    height: 1000px;
+    background: #000;
+    position: relative;
+}
+
+/* container_wrap */
+#container_wrap{
+    width: 1000px;
+    position: absolute;
+    left: 50%;
+    margin-left: -500px;
+}
+/* header */
+#header{
+    background-color: #BCBCBC;
+    border: 4px solid #E6E6E6;
+    margin-top: 50px;
+}
+/* header_wrap */
+#header_wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+/* logo */
+#logo{
+    width: 30px;
+    height: 30px;
+}
+
+/* search_box */
+#search_box{
+    position: relative;
+}
+
+#search_box input{
+    width: 500px;
+    height: 40px;
+    margin: 0 10px;
+    border: 4px solid #E6E6E6;
+    font-family: 'Galmuri11';
+    text-align: center;
+}
+
+#search_btn{
+    border: none;
+    position: absolute;
+    right: 22px;
+    top: 13px;
+    background: url(../images/search.png) no-repeat;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+/* con_wrap */
+.con{
+    background: #008081 url(../images/pngwing.png) no-repeat right 20px bottom 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding-top: 30px;
+}
+
+/* main */
+#start_btn {
+    color: #fff;
+    cursor: pointer;
+    margin: 310px;
+    font-size: 100px;
+}
+
+#container a{
+    color: #fff;
+    text-decoration: none;
+}
+#container li{
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+#container li:hover{
+    background: #BCBCBC;
+    color: #333;
+}
+
+#container p{
+    font-weight: 700;
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+#container span{
+    margin: 10px 0;
+    width: 200px;
+    padding: 15px;
+    display: block;
+    border: 3px solid #fff;
+}
+
+/* footer */
+#footer{
+    margin-bottom: 50px;
+    background-color: #BCBCBC;
+    border: 4px solid #E6E6E6;
+    height: 50px;
+}
+
+#ft_wrap{
+    display: flex;
+    flex-direction: row;
+}
+
+#ft_wrap li{
+    width: 50px;
+    height: 50px;
+}
+
+#ft_wrap li:nth-child(1){
+    margin-top: 5px;
+    width: 100px;
+    background: url(../images/ft.png) no-repeat;
+}
+#ft_wrap li:nth-child(2){
+    background: url(../images/ft_icon1.png) no-repeat;
+}
+#ft_wrap li:nth-child(3){
+    background: url(../images/ft_icon2.png) no-repeat;
+}
+#ft_wrap li:nth-child(4){
+    background: url(../images/ft_icon3.png) no-repeat;
+}
+#ft_wrap li:nth-child(5){
+    background: url(../images/ft_icon4.png) no-repeat;
+}
