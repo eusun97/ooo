@@ -1,28 +1,17 @@
-from calendar import prcal
 from fastapi import APIRouter, Request
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
-from fastapi import FastAPI, Request
-from pyparsing import html_comment
-import topNaver as tn
-from fdr_test import prac
-
-from ast import Import
-from datetime import date
-from turtle import st
-
+from fastapi import  Request
 from fastapi.staticfiles import StaticFiles
-from typing import List, Optional, Union, ValuesView
-from h11 import Data
-from pydantic import BaseModel
-import sys
-sys.path.append("/fdr_test")
-import fdr_test as ii
-sys.path.append("/topNaver")
-import topNaver as tn
-from bs4 import BeautifulSoup as bs4
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from pathlib import Path
+from fastapi import Request
+from topNaver import one_page_list
+import json
+
+
 router = APIRouter()
 
 router.mount(
@@ -35,19 +24,25 @@ BASE_DIR = Path(__file__).parent.parent.absolute()
 
 templates = Jinja2Templates(directory=BASE_DIR / "templates")
 
-listSt=[]
-for names in tn.STOCK_NAME_LIST:
-    name=str(names.text)
-    print(name)
-    print(type(name))
-    
-    listSt.append(name)
+@router.get("/top5")
+async def root(request: Request): 
 
-@router.get("/index")
-async def root(request: Request,q:Optional[list]=listSt):
-   
-    
+    top_5_list=one_page_list(1,1)
+    red=json.loads(top_5_list)
+
+    topNameList=[]
+    topCodeList=[]
+    for k_name, k_code in zip(red['종목명'], red['code']):
+        
+        topNameList.append(red['종목명'][k_name])
+        topCodeList.append(red['code'][k_code])
+
+    payload={
+        "name": topNameList,
+        "code": topCodeList,
+    }
+
     return templates.TemplateResponse(
-        "index.html", {"request": request, "q":q})
+        "top5.html", {"request": request, "payload":payload})
 
 
