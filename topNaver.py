@@ -1,9 +1,6 @@
 ################# top5_page
-from email import header
-import urllib.request
-from wsgiref import headers
-from bs4 import BeautifulSoup as bs, Script
-from requests import request
+
+from bs4 import BeautifulSoup as bs
 import requests
 import pandas as pd
 
@@ -45,6 +42,7 @@ def one_page_list(sosok, page):
             STOCK_PRICE_LIST.append(stockPrice)
             
     STOCK_LIST = []
+
     
     for i in range(len(STOCK_NAME_LIST)):
         stockInfo = [STOCK_NAME_LIST[i], int(STOCK_PRICE_LIST[i]), STOCK_CODE_LIST[i]]
@@ -54,3 +52,4 @@ def one_page_list(sosok, page):
     return js
 
 one_page_list(1, 1)
+

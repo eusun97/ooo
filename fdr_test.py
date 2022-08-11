@@ -1,7 +1,5 @@
-from datetime import date, datetime
-from operator import index
+from datetime import date
 import FinanceDataReader as fdr
-import datetime
 import pandas as pd
 
 # 삼성전자(005930) 전체 (1996-11-05 ~ 현재)
@@ -10,11 +8,9 @@ import pandas as pd
 def prac(code: str="005930"):
     global d
     d = date(2022, 1, 11)
-    global currentStock  
     dat =[]
     df = fdr.DataReader(code, d.isoformat())
     dat=df['Close'].tolist()
-    currentStock=dat[-1]
    
     indexList= df.index.strftime("%Y-%m-%d").tolist()
 
@@ -28,3 +24,4 @@ def prac(code: str="005930"):
     return js
 
 prac()
+
